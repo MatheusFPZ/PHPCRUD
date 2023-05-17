@@ -1,6 +1,6 @@
 <?php
 
-    
+    require_once 'app/Db/Database.php';
 
     //VERIFICA SE O FORMULARIO FOI ENVIADO
     if($_SERVER['REQUEST_METHOD']=== 'POST'){
