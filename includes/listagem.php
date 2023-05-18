@@ -3,35 +3,23 @@
 
 <main>
     <section>
-    <a href="cadastrar.php">
-        <button class ="btn btn-success">Novo Projeto</button>
-    </a>
+        <body>
+            <table class ="table">
+                <thead>
+                    <tr>
+                    <th scope="col">nome</th>
+                    <th scope="col">idade</th>
+                    <th scope="col">peso</th>
+                    </tr>
+
+                </thead>
+                
+                
+
+            </table>
+        </body>
 
     </section>
-    <section>
-        <table class= "table bg-light mt-3">
-
-            <head>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Descrição</th>
-                    <th>Status</th>
-                    <th>Data</th>
-                    <th>Ações</th>
-
-
-
-                </tr>
-
-            </head>
-        </table>
-
-
-
-    </section>
-
 
 
 </main>
-

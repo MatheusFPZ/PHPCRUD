@@ -5,26 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style><?php include 'styles.css'; ?></style>
+  
 </head>
 <body>
-    <section>
-      <h2>Login</h2>
+
+
+    <div class ="container">
     
     
-    <form action="login.php" method="POST">
     
-    <label for="email" >email:</label>
-    <input type="text" id="email" name="email" required><br><br>
+    <form class = "formulario" action="login.php" method="POST">
+    <h2 class="titulo">Login</h2>
+  
+      
+    <input type="text" id="email" name="email" placeholder="Endereço de email"required><br><br>
     
-    <label for="senha">Senha:</label>
-    <input type="password" id="senha" name="senha" required><br><br>
+   
+    <input type="password" id="senha" name="senha" placeholder="Senha" required><br><br>
+    
+    <button class="button"type="submit" name="enviar">Continuar</button>
     <div class="form-group" >
-      <a href="cadastro.php" class = "btn btn-success">Cadastrar</a>
+      <p>N tem conta?
+        <a class="link" href="cadastro.php">Cadastrar</a>
+      </p>
     
-    <button class="btn btn-success" type="submit" name="enviar">Enviar</button>
+    
     </div>
     </form>
-  </section>
+  
     
 
   

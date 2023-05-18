@@ -1,4 +1,5 @@
 <?php
+use function App\Db\criarProjeto;
 
 session_start();
 require_once 'app/Db/Database.php';
@@ -9,7 +10,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-
+ 
 
 
 
