@@ -1,11 +1,17 @@
 <?php
 
-    //require_once 'app/Entity/Projeto.php';
+$login_cookie = $_COOKIE['email'];
 
-    use \App\Entity\Projeto;
-
+if(isset($login_cookie)){
     include 'includes/header.php';
-    include 'includes/formulario-cadastro.php';
+    include 'includes/pagina.php';
     include 'includes/footer.php';
+  }else{
+    echo"Bem-Vindo, convidado <br>";
+    echo"Essas informações <font color='red'>NÃO PODEM</font> ser acessadas por você";
+    echo"<br><a href='login.php'>Faça Login</a> Para ler o conteúdo";
+  }
+
 
 ?>
+  

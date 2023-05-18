@@ -3,7 +3,7 @@
     require_once 'app/Db/Database.php';
 
     //VERIFICA SE O FORMULARIO FOI ENVIADO
-    if($_SERVER['REQUEST_METHOD']=== 'POST'){
+    if($_SERVER['REQUEST_METHOD']==='POST'){
         //OBTER VALORES
         $nome = $_POST['username'];
         $email= $_POST['email'];
@@ -47,14 +47,18 @@
 
     //verificar sucesso
     if($stmt->rowCount()>0){
-        echo 'dale macio';
+        echo"<script language='javascript' type='text/javascript'>
+    alert('Cadastrado com sucesso');window.location
+    .href='login.php';</script>";
     }else{
         echo 'se fufu';
     }
 
     
     }
-
+    include 'includes/header.php';
+    include 'includes/formulario-cadastro.php';
+    include 'includes/footer.php';  
 
 
 ?>

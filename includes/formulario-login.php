@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,21 +8,22 @@
 </head>
 <body>
     <section>
-      <h2>Cadastro</h2>
-      <a href="/lp44/" class="btn btn-success">voltar</a>
+      <h2>Login</h2>
     
     
-    <form action="/lp44/cadastro.php" method="POST">
-    <label for="username">Nome de usuario:</label>
-    <input type="text" id="username" name="username" required><br><br>
+    <form action="login.php" method="POST">
+    
     <label for="email" >email:</label>
     <input type="text" id="email" name="email" required><br><br>
     
     <label for="senha">Senha:</label>
     <input type="password" id="senha" name="senha" required><br><br>
-    <button class="btn btn-success" type="submit" name="enviar">Enviar</button>
-    </form>
+    <div class="form-group" >
+      <a href="cadastro.php" class = "btn btn-success">Cadastrar</a>
     
+    <button class="btn btn-success" type="submit" name="enviar">Enviar</button>
+    </div>
+    </form>
   </section>
     
 
