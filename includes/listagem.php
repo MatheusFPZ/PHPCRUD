@@ -12,8 +12,9 @@ function listarProjetos(){
      
     try{
     $stmt=$pdo->prepare($sql);
-    
-    $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->execute(); 
+    $projetos= $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $projetos;
     }catch(PDOException $e){
             echo 'erro ao listar'. $e->getMessage();
             EXIT();
@@ -21,7 +22,7 @@ function listarProjetos(){
    
 }
 
-$projetos=listarProjetos();
+
 
 ?>
 
@@ -36,15 +37,21 @@ $projetos=listarProjetos();
                     <th scope="col">nome</th>
                     <th scope="col">idade</th>
                     <th scope="col">peso</th>
+                    <th></th>
                     </tr>
 
-               <?php foreach ($projetos as $projeto): ?>
+               <?php foreach (listarProjetos() as $projeto): ?>
                         <tr>
                 <td><?php echo $projeto['id']; ?></td>
                 <td><?php echo $projeto['nome']; ?></td>
                 <td><?php echo $projeto['idade']; ?></td>
                 <td><?php echo $projeto['peso']; ?></td>
-              
+                <td>
+                <a href="editarprojeto.php?id=<?php echo $projeto['id']; ?>" class="btn btn-primary">
+                                    Editar                                    
+                                </a>
+            </td>
+                
                         </tr>
 
                

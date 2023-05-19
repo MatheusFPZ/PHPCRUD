@@ -3,7 +3,8 @@
 
 require_once 'app/Db/Database.php';
 
-use App\Db;
+
+use function App\Db\criarProjeto;
 
 //verifica se formulario foi enviado
 
@@ -14,11 +15,28 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 $idade=$_POST['idade'];
 $peso=$_POST['peso'];
 
+$erros=[];
+if (!is_numeric($idade)) {
+    
+    $erros[] = 'a idade deve ser um valor numerico';
+    
+}
+
+if (!is_numeric($peso)) {
+    $erros[] = 'o peso deve ser um valor numerico';
+   
+}
+
+if(!empty($erros)){
+    foreach ($erros as $erro){
+        echo '<p>'. $erro.'</p>';
+    }
+}
+
+criarProjeto($nome, $idade, $peso);
 
 
 
-
-Db\criarProjeto($nome, $idade, $peso);
 
 }
 

@@ -9,7 +9,7 @@ use PDOException;
     $host = 'localhost';
     $dbname = 'teste';
     $user = 'root';
-    $password = '123';
+    $password = '';
   
     //conecta ao banco
     try {
@@ -58,6 +58,42 @@ use PDOException;
         }
     }
 
-   
+        function buscarPorId($id){
 
+            global $pdo;
+
+            $sql = "SELECT * FROM pacientes WHERE id = :id";
+
+            try{
+                $stmt= $pdo->prepare($sql);
+                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+            }catch(PDOException $e){
+                echo 'erro ao buscar projeto'.$e->getMessage();
+            }
+        }
+
+
+  // function editarProjeto($nome, $idade, $peso){
+
+   // global $pdo;
+   // $sql="UPDATE pacientes SET nome = :nome, idade = :idade, peso = :peso WHERE id = :id";
+
+   // try{
+     //   $stmt= $pdo->prepare($sql);
+     //   $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
+     //   $stmt->bindParam(':idade', $idade, PDO::PARAM_INT);
+     //   $stmt->bindParam(':peso', $peso, PDO::PARAM_INT);
+     //   $stmt->execute();
+        
+
+
+   // }catch(PDOException $e){
+    //    echo 'erro ao editar projeto'. $e->getMessage();
+        
+//}
+
+
+   //}
 ?>
