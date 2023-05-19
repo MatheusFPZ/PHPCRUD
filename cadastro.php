@@ -7,7 +7,7 @@
         //OBTER VALORES
         $nome = $_POST['username'];
         $email= $_POST['email'];
-        $senha=$_POST['senha'];
+        $senha=$_POST['senha']; 
 
     
     
