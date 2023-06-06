@@ -18,17 +18,17 @@
         </div>
         <div class="form-group">
         <label>nome</label>
-        <input type = "text" class="form-control" name="nome" value>
+        <input type = "text" class="form-control" name="nome" value="<?php echo $nome; ?>">
 
         </div>
         <div class="form-group">
         <label>idade</label>
-        <input type = "text" class="form-control" name="idade" value>
+        <input type = "text" class="form-control" name="idade" value="<?php echo $idade; ?>">
 
         </div>
         <div class="form-group">
         <label>peso</label>
-        <input type = "text" class="form-control" name="peso" value>
+        <input type = "text" class="form-control" name="peso" value="<?php echo $peso; ?>">
 
         </div>
        <div class ="form-group">

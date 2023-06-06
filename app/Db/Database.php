@@ -35,7 +35,9 @@ use PDOException;
     alert('Cadastrado com sucesso');window.location
     .href='index.php';</script>";
     }else{
-        echo 'se fufu';
+        echo"<script language='javascript' type='text/javascript'>
+    alert('ERRO');window.location
+    .href='index.php';</script>";
     }
 
         }catch(PDOException $e){
@@ -75,25 +77,26 @@ use PDOException;
         }
 
 
-  // function editarProjeto($nome, $idade, $peso){
+   function editarProjeto($id, $nome, $idade, $peso){
 
-   // global $pdo;
-   // $sql="UPDATE pacientes SET nome = :nome, idade = :idade, peso = :peso WHERE id = :id";
+    global $pdo;
+    $sql="UPDATE pacientes SET nome = :nome, idade = :idade, peso = :peso WHERE id = :id";
 
-   // try{
-     //   $stmt= $pdo->prepare($sql);
-     //   $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
-     //   $stmt->bindParam(':idade', $idade, PDO::PARAM_INT);
-     //   $stmt->bindParam(':peso', $peso, PDO::PARAM_INT);
-     //   $stmt->execute();
+    try{
+        $stmt= $pdo->prepare($sql);
+        $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
+        $stmt->bindParam(':idade', $idade, PDO::PARAM_INT);
+        $stmt->bindParam(':peso', $peso, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        
         
 
-
-   // }catch(PDOException $e){
-    //    echo 'erro ao editar projeto'. $e->getMessage();
+    }catch(PDOException $e){
+        echo 'erro ao editar projeto'. $e->getMessage();
         
-//}
+}
 
 
-   //}
+   }
 ?>

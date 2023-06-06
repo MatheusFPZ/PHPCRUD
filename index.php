@@ -4,7 +4,7 @@ $login_cookie = $_COOKIE['email'];
 include 'includes/header.php';
 include 'includes/footer.php';
 
-if(isset($login_cookie)){
+if(isset($_COOKIE)){
     
     include 'includes/listagem.php';
     
