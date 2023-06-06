@@ -85,7 +85,7 @@ use PDOException;
     try{
         $stmt= $pdo->prepare($sql);
         $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
-        $stmt->bindParam(':idade', $idade, PDO::PARAM_INT);
+        $stmt->bindParam(':idade', $idade, PDO::PARAM_STR);
         $stmt->bindParam(':peso', $peso, PDO::PARAM_INT);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -99,4 +99,19 @@ use PDOException;
 
 
    }
+
+   function deletarProjeto($id) {
+    global $pdo;
+    
+    $sql = "DELETE FROM pacientes WHERE id = :id";
+
+    try {
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    } catch(PDOException $e) {
+        echo 'Erro ao deletar projeto: ' . $e->getMessage();
+    }
+}
+
 ?>

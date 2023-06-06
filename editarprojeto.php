@@ -57,8 +57,12 @@
     
         
         <style> <?php include'styles.css'?></style>
-    <div class="container">
-        <form method="POST" action="editarprojeto.php?id=<?php echo $id; ?>">
+
+        
+</style>
+   
+    
+        
         
         <div class="container">
         <form method="POST" action="editarprojeto.php?id=<?php echo $id; ?>">
@@ -70,6 +74,8 @@
             <label for="peso">Peso:</label>
             <input type="text" name="peso" value="<?php echo isset($peso) ? $peso : ''; ?>" required><br>
             <input type="submit" value="Editar">
+            
         </form>
-    </div>
+        </div>
+   
 </main>

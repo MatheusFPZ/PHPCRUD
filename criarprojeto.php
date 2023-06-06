@@ -31,6 +31,7 @@ if(!empty($erros)){
     foreach ($erros as $erro){
         echo '<p>'. $erro.'</p>';
     }
+    exit();
 }
 
 criarProjeto($nome, $idade, $peso);

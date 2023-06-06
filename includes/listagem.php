@@ -50,6 +50,9 @@ function listarProjetos(){
                 <a href="editarprojeto.php?id=<?php echo $projeto['id']; ?>" class="btn btn-primary">
                                     Editar                                    
                                 </a>
+                <a href="excluir.php?id=<?php echo $projeto['id']; ?>" class="btn btn-primary">
+                                    Excluir                                
+                                </a>
             </td>
                 
                         </tr>
